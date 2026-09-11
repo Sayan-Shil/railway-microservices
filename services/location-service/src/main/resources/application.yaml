@@ -1,0 +1,15 @@
+server:
+  port: 5004
+
+spring:
+  application:
+    name: location-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/railway_location_db
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+      hibernate:
+        ddl-auto: update

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+<!--  This says , configurations should be inherited from parent    -->
+    <!--  Dependencies , plugins all are from parent   -->
+    <parent>
+        <groupId>com.rare</groupId>
+        <artifactId>railway-microservices</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+
+    <!--  Information About This Module    -->
+    <artifactId>cloud</artifactId>
+    <packaging>pom</packaging>
+
+    <name>cloud infrastructure</name>
+    <description>Infrastructure for Cloud Modules</description>
+
+
+    <!--  Child Modules of this module   -->
+    <modules>
+<!--        <module>service-registry</module>-->
+<!--        <module>config-server</module>-->
+<!--        <module>api-gateway</module>-->
+    </modules>
+
+
+</project>

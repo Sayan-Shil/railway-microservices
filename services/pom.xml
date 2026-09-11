@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+<!--  This says , configurations should be inherited from parent    -->
+    <!--  Dependencies , plugins all are from parent   -->
+    <parent>
+        <groupId>com.rare</groupId>
+        <artifactId>railway-microservices</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+    </dependencies>
+
+
+    <!--  Information About This Module    -->
+    <artifactId>services</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Business Services</name>
+    <description>Aggregator for Business Microservices</description>
+
+
+    <!--  Child Modules of this module   -->
+    <modules>
+        <module>location-service</module>
+    </modules>
+
+
+</project>

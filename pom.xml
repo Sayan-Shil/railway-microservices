@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--   Group id represents Organisation Name / Company ; Every Module will share this base group    -->
+    <groupId>com.rare</groupId>
+    <!--  ArtifactId represents name of the module    -->
+    <artifactId>railway-microservices</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <!--  Naturally it is jar but here it is pom used for organization purposes , so do not compile the module    -->
+    <packaging>pom</packaging>
+
+    <name>railway-microservices</name>
+    <description>railway-microservices</description>
+
+    <!--  This helps tp define child modules   -->
+    <!--  When we run - - mvn clean install from root , maven will read modules from here   -->
+    <modules>
+        <module>common-lib</module>
+        <module>cloud</module>
+        <module>services</module>
+    </modules>
+
+    <!--  This helps to set various properties for the root modules  -->
+    <!-- Just change this version, change for every microservice automatically  -->
+    <properties>
+
+        <java.version>25</java.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
+
+
+        <spring.boot.version>4.1.1</spring.boot.version>
+        <spring.cloud.version>2025.1.0</spring.cloud.version>
+    </properties>
+
+    <!-- This is dependency management block used for centralized dependencies  -->
+
+    <!-- Note** Dependency Management will not add dependency , it will only manage dependency versions -->
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- Spring Boot BOM (Bill of Materials) , central version control for Spring Boot  -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring Cloud BOM (Bill of Materials) , central version control for Spring Cloud  -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- This is plugin management block used for centralized plugins  -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <!-- This decides how java code will compile ; default is Java 8 if not used -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.13.0</version>
+                    <configuration>
+                        <release>${java.version}</release>
+                        <parameters>true</parameters>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+                <!-- This decides how spring boot code will compile ; default is Java 8 if not used -->
+                <plugin>
+                    <groupId>org.springboot.framework</groupId>
+                    <artifactId> spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
