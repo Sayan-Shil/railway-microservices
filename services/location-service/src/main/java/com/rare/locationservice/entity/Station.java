@@ -1,13 +1,11 @@
 package com.rare.locationservice.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.rare.payload.embeddable.Address;
-import com.rare.payload.embeddable.GeoCode;
+import com.rare.embeddable.Address;
+import com.rare.embeddable.GeoCode;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.*;
-
-import java.time.ZoneId;
 
 @Getter
 @Setter

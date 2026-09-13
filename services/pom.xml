@@ -32,6 +32,8 @@
     <!--  Child Modules of this module   -->
     <modules>
         <module>location-service</module>
+        <module>user-service</module>
+        <module> railway-core-service</module>
     </modules>
 
 

@@ -1,10 +1,9 @@
 package com.rare.payload.response.location;
 
-import com.rare.payload.embeddable.Address;
-import com.rare.payload.embeddable.GeoCode;
+import com.rare.embeddable.Address;
+import com.rare.embeddable.GeoCode;
 import lombok.*;
 
-import java.time.ZoneId;
 @Getter
 @Setter
 @NoArgsConstructor

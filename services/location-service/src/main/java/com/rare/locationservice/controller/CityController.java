@@ -4,6 +4,7 @@ import com.rare.locationservice.entity.City;
 import com.rare.locationservice.service.CityService;
 import com.rare.payload.response.location.CityResponse;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -20,6 +21,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/cities")
 @RequiredArgsConstructor
+@Tag(name = "City", description = "City management APIs")
 public class CityController {
     private final CityService cityService;
 

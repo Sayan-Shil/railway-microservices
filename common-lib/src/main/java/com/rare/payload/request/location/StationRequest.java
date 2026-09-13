@@ -1,7 +1,7 @@
 package com.rare.payload.request.location;
 
-import com.rare.payload.embeddable.Address;
-import com.rare.payload.embeddable.GeoCode;
+import com.rare.embeddable.Address;
+import com.rare.embeddable.GeoCode;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

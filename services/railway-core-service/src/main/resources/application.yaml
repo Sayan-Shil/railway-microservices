@@ -1,0 +1,15 @@
+server:
+  port: 5002
+
+spring:
+  application:
+    name: railway-core-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/railway_db
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop

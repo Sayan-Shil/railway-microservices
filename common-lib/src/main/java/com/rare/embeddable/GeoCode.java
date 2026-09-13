@@ -1,4 +1,4 @@
-package com.rare.payload.embeddable;
+package com.rare.embeddable;
 
 import jakarta.persistence.Embeddable;
 import lombok.*;

@@ -6,6 +6,7 @@ import com.rare.payload.request.location.StationRequest;
 import com.rare.payload.response.location.CityResponse;
 import com.rare.payload.response.location.StationResponse;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -21,6 +22,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/stations")
 @RequiredArgsConstructor
+@Tag(name = "Station", description = "Station management APIs")
 public class StationController {
     private final StationService stationService;
 
